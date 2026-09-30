@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Recicle - Onde descartar</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topo">
+      <h1>♻️ Recicle</h1>
+      <p>Encontre pontos de coleta perto de você</p>
+    </header>
+
+    <main class="cartao">
+      <form id="formBusca">
+        <label for="cep">Seu CEP</label>
+        <input
+          type="text"
+          id="cep"
+          name="cep"
+          placeholder="00000-000"
+          inputmode="numeric"
+          maxlength="9"
+          required
+        />
+
+        <label for="material">O que você quer descartar?</label>
+        <select id="material" name="material" required>
+          <option value="" disabled selected>Selecione o material</option>
+        </select>
+
+        <label for="email">Seu e-mail</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="seuemail@exemplo.com"
+          required
+        />
+
+        <label for="raio">Raio de busca</label>
+        <select id="raio" name="raio">
+          <option value="">Padrão do site (~10 km)</option>
+          <option value="1">Até 1 km</option>
+          <option value="2" selected>Até 2 km</option>
+          <option value="5">Até 5 km</option>
+        </select>
+
+        <button type="submit" id="btnBuscar">Buscar pontos de coleta</button>
+      </form>
+
+      <div id="mensagem" class="mensagem" hidden></div>
+
+      <div id="resumo" class="resumo" hidden></div>
+
+      <ul id="listaResultados" class="lista-resultados"></ul>
+
+      <div id="paginacao" class="paginacao" hidden></div>
+    </main>
+
+    <footer class="rodape">
+      <p>Projeto pessoal - dados consultados via eCycle</p>
+    </footer>
+  </div>
+
+  <script src="materiais.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
